@@ -1,0 +1,5 @@
+.blogPostList {
+    display: grid; 
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
+    gap: 20px; 
+}
