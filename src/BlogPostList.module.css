@@ -1,5 +1,19 @@
 .blogPostList {
     display: grid; 
-    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px; 
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .blogPostList{
+        grid-template-columns: repeat(2, minmax(300px,1fr));
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .blogPostList{
+        grid-template-columns: repeat(3, minmax(300px,1fr));
+    }
 }
