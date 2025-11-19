@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router";
 import styles from "./BlogPostItem.module.css";
+import dateTransformer from "./utilities";
 
 
-function BlogPostItem({title, summary, date, url}) {
+function BlogPostItem({ title, summary, date, url }) {
 
     return (
         <div className={styles.blogPostItem}>
-        <article>
-        <Link to={url} className={styles.title}><h2>{title}</h2></Link>
-        <p className={styles.summary}>{summary}</p>
-        <p className={styles.date}>Published on: {date}</p>
-        </article>
+            <article>
+                <Link to={url} className={styles.title}><h2>{title}</h2></Link>
+                <p className={styles.summary}>{summary}</p>
+                <p className={styles.date}>Published on: {dateTransformer(date)}</p>
+            </article>
         </div>
     )
 }
