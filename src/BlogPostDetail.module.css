@@ -4,7 +4,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: left;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
@@ -51,7 +51,6 @@
     .blogPostDetail {
         padding: 40px;
         margin: 0 auto;
-        text-align: left;
         max-width: 800px;
     }
 
@@ -81,5 +80,34 @@
 
 }
 
-/* Tablet View (awaiting specs) */
-/* @media (min-width: 769px) {}*/
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .blogPostDetail {
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-bottom: 17px;
+    }
+
+    .author {
+        font-size: 16px;
+        margin-bottom: 8px;
+
+    }
+
+    .date {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .content {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 25px;
+        margin-bottom: 40px;
+    }
+
+}

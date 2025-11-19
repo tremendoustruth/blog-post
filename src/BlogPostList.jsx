@@ -3,28 +3,28 @@ import BlogPostItem from "./BlogPostItem";
 import React from "react";
 import styles from "./BlogPostList.module.css";
 
-function BlogPostList({posts}) {
+function BlogPostList({ posts }) {
 
-    if (posts.length === 0){
+    if (posts.length === 0) {
         return <p>No blog posts available.</p>
     }
 
-    return ( 
+    return (
         <div className={styles.blogPostList}>
-        {posts.map((post) => (
-            <BlogPostItem
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            summary={post.summary}
-            date={post.formattedDate}
-            url={post.url}/> 
-        ))}
+            {posts.map((post) => (
+                <BlogPostItem
+                    key={post.id}
+                    id={post.id}
+                    title={post.title}
+                    summary={post.summary}
+                    date={post.date}
+                    url={post.url} />
+            ))}
         </div>
     )
 
-    }
+}
 
-    export default BlogPostList
+export default BlogPostList
 
 
