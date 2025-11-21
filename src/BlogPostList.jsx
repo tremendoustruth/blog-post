@@ -10,17 +10,20 @@ function BlogPostList({ posts }) {
     }
 
     return (
-        <div className={styles.blogPostList}>
-            {posts.map((post) => (
-                <BlogPostItem
-                    key={post.id}
-                    id={post.id}
-                    title={post.title}
-                    summary={post.summary}
-                    date={post.date}
-                    url={post.url} />
-            ))}
-        </div>
+        <main>
+            <h1>Blog Post List!</h1>
+            <div className={styles.blogPostList}>
+                {posts.map((post) => (
+                    <BlogPostItem
+                        key={post.id}
+                        id={post.id}
+                        title={post.title}
+                        summary={post.summary}
+                        date={post.date}
+                        url={post.url} />
+                ))}
+            </div>
+        </main>
     )
 
 }
