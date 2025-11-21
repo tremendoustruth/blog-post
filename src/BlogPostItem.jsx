@@ -4,12 +4,12 @@ import styles from "./BlogPostItem.module.css";
 import dateTransformer from "./utilities";
 
 
-function BlogPostItem({ title, summary, date, url }) {
+function BlogPostItem({ title, summary, date, id }) {
 
     return (
         <div className={styles.blogPostItem}>
             <article>
-                <Link to={url} className={styles.title}><h2>{title}</h2></Link>
+                <Link to={`/post/${id}`} className={styles.title}><h2>{title}</h2></Link>
                 <p className={styles.summary}>{summary}</p>
                 <p className={styles.date}>Published on: {dateTransformer(date)}</p>
             </article>

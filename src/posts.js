@@ -1,4 +1,4 @@
-const posts = [
+const initialPosts = [
   {
     id: '1',
     title: 'Getting Started with React',
@@ -50,4 +50,4 @@ const posts = [
   },
 ]
 
-export default posts
+export default initialPosts
