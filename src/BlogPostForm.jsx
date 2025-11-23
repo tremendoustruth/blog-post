@@ -32,37 +32,47 @@ const BlogPostForm = ({ post, onSubmit }) => {
         <>
             <form className={styles.blogPostForm} onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
-                    <label htmlFor="title">Title</label>
+                    <label className={styles.label} htmlFor="title">Title:</label>
                     <input
+                        className={styles.input}
                         id="title"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
                     {errors.title && <p className={styles.error}>{errors.title}</p>}
-
-                    <label htmlFor="title">Author:</label>
+                </div>
+                <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="title">Author:</label>
                     <input
+                        className={styles.input}
                         id="Author"
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                     />
                     {errors.author && <p className={styles.error}>{errors.author}</p>}
-                    <label htmlFor="title">Date:</label>
+                </div>
+                <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="title">Date:</label>
                     <DatePicker
+                        className={styles.input}
                         selected={date ? new Date(date) : null}
                         onChange={(d) => setDate(d.toISOString().split("T")[0])}
                     />
-                    <label htmlFor="title">Content:</label>
+                    {errors.date && <p className={styles.error}>{errors.date}</p>}
+                </div>
+                <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="title">Content:</label>
                     <SunEditor
+                        className={styles.input}
                         setContents={content}
                         onChange={setContent}
                     />
                     {errors.content && <p className={styles.error}>{errors.content}</p>}
 
                 </div>
-                {/* Other form fields similarly */}
-                <button type="submit">Submit</button>
-
+                <div className={styles.submitWrapper}>
+                    <button className={styles.submit} type="submit">Submit</button>
+                </div>
             </form>
             <Link to="/" className={styles.link}>Home
             </Link>
