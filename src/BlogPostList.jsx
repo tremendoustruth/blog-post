@@ -2,6 +2,7 @@
 import BlogPostItem from "./BlogPostItem";
 import React from "react";
 import styles from "./BlogPostList.module.css";
+import { Link } from "react-router"
 
 function BlogPostList({ posts }) {
 
@@ -23,6 +24,9 @@ function BlogPostList({ posts }) {
                         url={post.url} />
                 ))}
             </div>
+            <Link to="/post/create">
+                <button className={styles.create}>Create New Post</button>
+            </Link>
         </main>
     )
 
