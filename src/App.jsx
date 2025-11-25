@@ -11,10 +11,10 @@ import BlogPostForm from './BlogPostForm.jsx';
 
 
 
-function PostSelector({ posts }) {
+function PostSelector({ posts, onDelete }) {
   const { id } = useParams()
   const post = posts.find(post => post.id === id)
-  return <BlogPostDetail {...post} />
+  return <BlogPostDetail {...post} id={id} onDelete={onDelete} />
 }
 
 function EditPost({ posts, onSubmit }) {
@@ -29,6 +29,12 @@ function EditPost({ posts, onSubmit }) {
 
 function App() {
   const [posts, setPosts] = useState(initialPosts)
+
+  function handleDeletePost(id) {
+    const newPosts = posts.filter(post => post.id !== id)
+    setPosts(newPosts)
+  }
+
   function handlePostSubmit(updatedPost) {
     console.log(updatedPost)
     console.log("Am I being called?")
@@ -52,7 +58,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<BlogPostList posts={posts} />} />
-        <Route path="/post/:id" element={<PostSelector posts={posts} />} />
+        <Route path="/post/:id" element={<PostSelector posts={posts} onDelete={handleDeletePost} />} />
         <Route path="/post/:id/edit" element={<EditPost posts={posts} onSubmit={handlePostSubmit} />} />
         <Route path="/post/create" element={<BlogPostForm onSubmit={handlePostSubmit} />} />
       </Routes>

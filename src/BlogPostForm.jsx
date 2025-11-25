@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from './BlogPostForm.module.css';
 import SunEditor from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router";
+import styles from './BlogPostForm.module.css';
 
 
 const BlogPostForm = ({ post, onSubmit }) => {
@@ -52,9 +52,13 @@ const BlogPostForm = ({ post, onSubmit }) => {
                     {errors.author && <p className={styles.error}>{errors.author}</p>}
                 </div>
                 <div className={styles.formGroup}>
-                    <label className={styles.label} htmlFor="title">Date:</label>
+                    <label className={styles.label} htmlFor="date">Date: </label>
                     <DatePicker
+                        id='date'
                         className={styles.input}
+                        wrapperClassName={styles.datePicker}
+                        popperPlacement='top-end'
+                        popperClassName={styles.popper}
                         selected={date ? new Date(date) : null}
                         onChange={(d) => setDate(d.toISOString().split("T")[0])}
                     />
