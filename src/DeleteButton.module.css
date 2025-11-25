@@ -1,0 +1,12 @@
+.delete {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 10px;
+    min-height: 44px;
+    min-width: 44px;
+}
