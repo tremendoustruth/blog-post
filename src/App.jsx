@@ -8,6 +8,7 @@ import BlogPostList from './BlogPostList'
 import initialPosts from './posts.js'
 import BlogPostDetail from "./BlogPostDetail.jsx"
 import BlogPostForm from './BlogPostForm.jsx';
+import Layout from "./Layout.jsx"
 
 
 
@@ -23,9 +24,6 @@ function EditPost({ posts, onSubmit }) {
   return <BlogPostForm post={post} onSubmit={onSubmit} />
 }
 
-// function maxIDFinder(posts) {
-//   posts.reduce()
-// }
 
 function App() {
   const [posts, setPosts] = useState(initialPosts)
@@ -56,12 +54,14 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<BlogPostList posts={posts} />} />
-        <Route path="/post/:id" element={<PostSelector posts={posts} onDelete={handleDeletePost} />} />
-        <Route path="/post/:id/edit" element={<EditPost posts={posts} onSubmit={handlePostSubmit} />} />
-        <Route path="/post/create" element={<BlogPostForm onSubmit={handlePostSubmit} />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<BlogPostList posts={posts} />} />
+          <Route path="/post/:id" element={<PostSelector posts={posts} onDelete={handleDeletePost} />} />
+          <Route path="/post/:id/edit" element={<EditPost posts={posts} onSubmit={handlePostSubmit} />} />
+          <Route path="/post/create" element={<BlogPostForm onSubmit={handlePostSubmit} />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   )
 }
