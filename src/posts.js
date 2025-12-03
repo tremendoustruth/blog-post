@@ -13,6 +13,18 @@ const initialPosts = [
                <li>Second step: Do some more stuff!</li>
              </ul>
              <p>Ta-da! Now you have a new application!</p>`,
+    comments: [
+      {
+        name: "Sally",
+        text: "Great post!",
+        date: '2025-02-12',
+      },
+      {
+        name: "Dawud",
+        text: "Super informative!",
+        date: '2025-11-10',
+      },
+    ],
     url: '/post/1',
   },
   {
@@ -26,6 +38,18 @@ const initialPosts = [
              <a href="https://dev.to/muskan-singh/css-flexbox-vs-gridbox-a-detailed-comparison-49c0" target="_blank">Here's the actually right place.</a>
              <p>I hope that helps you on your knowledge journey!</p>`,
     date: '2023-02-05',
+    comments: [
+      {
+        name: "Hank",
+        text: "Thanks for the info!",
+        date: '2025-02-02',
+      },
+      {
+        name: "Janice",
+        text: "Learned something new.",
+        date: '2024-10-10',
+      },
+    ],
     url: '/post/2',
   },
 
@@ -46,6 +70,13 @@ const initialPosts = [
              </ul>
              <p>Behold this impressive work!</p>`,
     date: '2023-03-10',
+    comments: [
+      {
+        name: "Noor",
+        text: "Noor was here!",
+        date: '2025-01-06'
+      },
+    ],
     url: '/post/3',
   },
 ]
