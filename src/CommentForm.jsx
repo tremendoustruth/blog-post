@@ -6,11 +6,10 @@ import styles from './CommentForm.module.css';
 const CommentForm = ({ isLoggedIn, userName, onSubmit, id }) => {
     const [name, setName] = useState('');
     if (isLoggedIn) { setName(userName); }
-    const date = new Date();
     const [text, setText] = useState('');
     const [errors, setErrors] = useState({});
     const handleSubmit = (e) => {
-        console.log("handleSubmit is being called")
+        const date = new Date();
         e.preventDefault();
         const newErrors = {};
         if (!name.trim()) newErrors.name = 'Required';
@@ -26,6 +25,7 @@ const CommentForm = ({ isLoggedIn, userName, onSubmit, id }) => {
         <>
             <form className={styles.commentForm} onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
+                    <h1>Add a comment:</h1>
                     <label className={styles.label} htmlFor="name">Name:</label>
                     <input
                         className={styles.input}

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useDebouncedCallback } from 'use-debounce';
+import styles from "./SearchBar.module.css"
 
 export default function SearchBar({ onSearch }) {
     const [query, setQuery] = useState("")
@@ -15,17 +16,18 @@ export default function SearchBar({ onSearch }) {
         }
     }
     return (
-        <label htmlFor="search">
-            Search Posts:
+        <>
             <input
                 type="text"
                 name="search"
                 id="search"
                 placeholder="Enter search term here"
+                className={styles.input}
                 value={query}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
             />
-        </label>
+        </>
+
     )
 }
