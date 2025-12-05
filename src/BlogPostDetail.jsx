@@ -1,13 +1,15 @@
 import { Link, useNavigate } from "react-router";
 import React from "react";
 import styles from "./BlogPostDetail.module.css"
-import dateTransformer from "./utilities";
+import { dateTransformer } from "./utilities";
 import DeleteButton from "./DeleteButton";
 import ConfirmationDialog from "./ConfirmationDialog";
 import { useState, useEffect } from "react";
 import BlogPostList from "./BlogPostList";
+import CommentList from "./CommentList.jsx"
+import CommentForm from "./CommentForm.jsx"
 
-export default function BlogPostDetail({ title, author, date, content, id, onDelete }) {
+export default function BlogPostDetail({ title, author, date, content, id, onDelete, comments, isLoggedIn, userName, onSubmit }) {
 
 
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -42,15 +44,22 @@ export default function BlogPostDetail({ title, author, date, content, id, onDel
                 <div className={styles.content}
                     dangerouslySetInnerHTML={{ __html: content }}>
                 </div>
-                <Link to="/" className={styles.link}>Home</Link>
                 <ConfirmationDialog
                     isOpen={isDialogOpen}
                     onClose={closeDialog}
                     onConfirm={handleConfirmDelete}
                     closeDialog={closeDialog}
                 />
+                <DeleteButton onClick={openDialog} />
             </article>
-            <DeleteButton onClick={openDialog} />
+            <article className={styles.commentSection}>
+                <CommentList comments={comments} />
+                <CommentForm
+                    isLoggedIn={isLoggedIn}
+                    userName={userName}
+                    id={id}
+                    onSubmit={onSubmit} />
+            </article>
         </div>
     )
 }

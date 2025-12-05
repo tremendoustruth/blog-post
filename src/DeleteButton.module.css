@@ -10,10 +10,3 @@
     min-height: 44px;
     min-width: 44px;
 }
-
-@media (min-width: 1200px) {
-    .delete {
-        width: 885px;
-    }
-
-}

@@ -1,4 +1,22 @@
 .searchWrapper {
     display: flex;
     justify-content: center;
+
+}
+
+.input {
+    width: 200px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    height: 20px;
+    margin-right: 4px;
+    flex-grow: 1;
+}
+
+@media (min-width: 1200px) {
+    .input {
+        width: 300px;
+    }
 }

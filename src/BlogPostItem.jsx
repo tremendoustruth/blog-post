@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import styles from "./BlogPostItem.module.css";
-import dateTransformer from "./utilities";
+import { dateTransformer } from "./utilities";
 
 
 function BlogPostItem({ title, summary, date, id }) {

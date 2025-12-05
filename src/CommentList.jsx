@@ -10,7 +10,7 @@ function CommentList({ comments }) {
     }
 
     return (
-        <main>
+        <>
             <h1>Comments</h1>
             <div className={styles.commentList}>
                 {comments.map((comment) => (
@@ -21,7 +21,7 @@ function CommentList({ comments }) {
                     />
                 ))}
             </div>
-        </main>
+        </>
     )
 
 }

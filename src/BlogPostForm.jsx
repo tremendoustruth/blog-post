@@ -78,8 +78,6 @@ const BlogPostForm = ({ post, onSubmit }) => {
                     <button className={styles.submit} type="submit">Submit</button>
                 </div>
             </form>
-            <Link to="/" className={styles.link}>Home
-            </Link>
         </>
     );
 };

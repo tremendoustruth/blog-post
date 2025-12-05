@@ -9,21 +9,15 @@ import initialPosts from './posts.js'
 import BlogPostDetail from "./BlogPostDetail.jsx"
 import BlogPostForm from './BlogPostForm.jsx';
 import Layout from "./Layout.jsx"
-import CommentList from "./CommentList.jsx"
-import CommentForm from "./CommentForm.jsx"
-
 
 
 function PostSelector({ posts, onDelete, onSubmit }) {
   const { id } = useParams()
   const post = posts.find(post => post.id === id)
-  const location = useLocation()
-  console.log(location)
+  console.log(post.comments)
   return (
     <>
-      <BlogPostDetail {...post} id={id} onDelete={onDelete} />
-      <CommentList comments={post.comments} />
-      <CommentForm id={id} onSubmit={onSubmit} />
+      <BlogPostDetail {...post} id={id} onDelete={onDelete} onSubmit={onSubmit} comments={post.comments} />
     </>
   )
 }
