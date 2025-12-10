@@ -23,6 +23,7 @@
 .xButton {
     background-color: red;
     color: white;
+    font-weight: bold;
 }
 
 .searchWrapper {
@@ -47,6 +48,12 @@
     color: white;
     cursor: pointer;
 }
+
+button {
+    background-color: #007BFF;
+    color: white;
+}
+
 
 .mobileMenu {
     position: absolute;
@@ -81,7 +88,7 @@ button:focus {
     outline-offset: 2px;
 }
 
-/*add media query for search icon in tablet view */
+/*add media query for search icon in view */
 
 @media (min-width: 1200px) {
     .searchIcon {

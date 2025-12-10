@@ -1,3 +1,7 @@
+.commentForm {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 h1 {
     font-size: 22px;
     color: rgb(51, 51, 51);
@@ -15,6 +19,42 @@ h1 {
     border-radius: 4px;
     margin-top: 10px;
     height: 44px;
+    font-size: 16px;
+}
+
+.input,
+.textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 769px) {}
